@@ -10,9 +10,10 @@ Each article is stored twice. There is a Markdown copy that GitHub displays dire
 asbmb-education-feature-archive/
 ├── README.md                      ← this index
 ├── templates/
-│   └── asbmb-education-page.html  ← the website Education page the article pages are based on
+│   ├── asbmb-education-page.html  ← the website Education page the article pages are based on
+│   └── asbmb-education-feature-page.html  ← the website Australian Biochemist Education Feature page
 ├── website/
-│   └── education-page-article-links.html  ← link list to paste into the Education page
+│   └── education-page-article-links.html  ← link list to paste into the Education Feature page
 ├── site/
 │   └── build.py                   ← builds the GitHub Pages copy of the website pages (see below)
 ├── .github/workflows/pages.yml    ← publishes that copy to GitHub Pages
@@ -134,7 +135,7 @@ asbmb-education-feature-archive/
 
 ## GitHub Pages copy
 
-`site/build.py` publishes the website pages described below outside the ASBMB website, with the ASBMB layout unchanged. The home page is the Education page (`templates/asbmb-education-page.html`) with the article list from `website/education-page-article-links.html` added after the Education Feature section, and each article is its `education-feature-<article-slug>.html` page. To make the pages work away from www.asbmb.org.au, the script removes their `<base>` element so images load from each article's `images/` folder, points the site menu at the matching pages on www.asbmb.org.au, and points links to the Education page at the home page. The files in this repository are not changed.
+`site/build.py` publishes the website pages described below outside the ASBMB website, with the ASBMB layout unchanged. The home page is the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`) with the article list from `website/education-page-article-links.html` added after its Contributing section, and each article is its `education-feature-<article-slug>.html` page. To make the pages work away from www.asbmb.org.au, the script removes their `<base>` element so images load from each article's `images/` folder and points the site menu at the matching pages on www.asbmb.org.au. The menu's Australian Biochemist Education Feature link, and each article's link back to Education, go to the home page. The files in this repository are not changed.
 
 To build it locally (Python 3, no extra packages):
 
@@ -152,7 +153,7 @@ The `education-feature-*.html` files use the same header, navigation, footer and
 
 - **Images.** Pages refer to images as `images/<file>`. The template sets `<base href="https://www.asbmb.org.au/">`, so on the live site these paths resolve against the site root. Before publishing, upload each article's images (for example to the EventsAir file store) and replace the `src` paths with the uploaded URLs. Opened locally, the pages show their text but not their images or site styling.
 - **Page addresses.** Canonical and social-media URLs assume each page is published at `https://www.asbmb.org.au/education-feature-<article-slug>`. Change them if the site uses different page names.
-- **Links from the Education page.** `website/education-page-article-links.html` lists every article page, grouped by issue, using the Education page's existing link styling.
+- **Links from the Education Feature page.** `website/education-page-article-links.html` lists every article page, grouped by issue, under an Education Feature Articles heading styled like the Contributing heading on the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`). Paste it after that page's Contributing section.
 
 ## How the articles were prepared
 

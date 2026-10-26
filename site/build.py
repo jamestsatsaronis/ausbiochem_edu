@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 """Build the GitHub Pages copy of the ASBMB Education Feature archive.
 
-The article pages (education-feature-*.html) and the Education page template
-are made for the ASBMB website. They set <base href="https://www.asbmb.org.au/">,
-so their relative links and image paths resolve against that site. This script
+The article pages (education-feature-*.html) and the page templates are made
+for the ASBMB website. They set <base href="https://www.asbmb.org.au/">, so
+their relative links and image paths resolve against that site. This script
 copies them into a static site that works anywhere, keeping the ASBMB layout:
 
+- the home page is the website's Australian Biochemist Education Feature page
+  (templates/asbmb-education-feature-page.html) with the article list from
+  website/education-page-article-links.html added after its Contributing
+  section;
 - the <base> element is removed, so each article's images/ folder loads from
   beside its page;
 - links to other pages of the ASBMB website are made absolute, so the menu
   still goes to www.asbmb.org.au;
-- links to the Education page go to the home page of this site, which is the
-  Education page template with the article list from
-  website/education-page-article-links.html added to it.
+- the menu's Australian Biochemist Education Feature link, and each article's
+  link back to Education, go to the home page.
 
 Usage:
     python3 site/build.py              # writes to _site/
@@ -31,15 +34,16 @@ ASBMB = "https://www.asbmb.org.au/"
 BASE = re.compile(r'\s*<base href="https://www\.asbmb\.org\.au/"\s*/?>')
 LINK = re.compile(r'(<a\b[^>]*?\bhref=")([^"]*)(")')
 ISSUE_DIR = re.compile(r"^vol-\d+-no-\d+-[a-z]+$")
-# The article list goes after the Education Feature section of the Education page.
-INSERT_AFTER = "ASBMB Education Feature Coordinators&nbsp;</span></div>"
+HOME_PAGE = "australian-biochemist-education-feature"
+# The article list goes after the Contributing section of the home page.
+INSERT_AFTER = "on how to contribute.</span></div></div><div><br></div></div>"
 
 
-def localise(html, home, pages):
+def localise(html, pages):
     """Rewrite an ASBMB website page so that it works away from www.asbmb.org.au.
 
-    home is the address of this site's Education page, relative to the page;
-    pages maps ASBMB page names (education-feature-<slug>) to addresses here.
+    pages maps ASBMB page names to addresses on this site, relative to the
+    page; links to any other ASBMB page go to www.asbmb.org.au.
     """
     html, found = BASE.subn("", html, count=1)
     if not found:
@@ -49,12 +53,7 @@ def localise(html, home, pages):
         url = m.group(2)
         if re.match(r"(?:[a-z]+:|#|//)", url) or url.startswith("images/"):
             return m.group(0)
-        if url == "education":
-            url = home
-        elif url in pages:
-            url = pages[url]
-        else:
-            url = ASBMB + url
+        url = pages.get(url, ASBMB + url)
         return m.group(1) + url + m.group(3)
 
     return LINK.sub(fix, html)
@@ -85,7 +84,8 @@ def build(out):
         dest.mkdir(parents=True)
         home = "../" * len(rel.parts) + "index.html"
         html = (folder / f"{name}.html").read_text(encoding="utf-8")
-        (dest / f"{name}.html").write_text(localise(html, home, {}), encoding="utf-8")
+        page = localise(html, {"education": home, HOME_PAGE: home})
+        (dest / f"{name}.html").write_text(page, encoding="utf-8")
         if (folder / "images").is_dir():
             shutil.copytree(folder / "images", dest / "images")
 
@@ -95,14 +95,15 @@ def build(out):
     if missing:
         raise ValueError(f"article list links to pages that are not in the archive: {sorted(missing)}")
 
-    template = (REPO / "templates" / "asbmb-education-page.html").read_text(encoding="utf-8")
+    template = (REPO / "templates" / "asbmb-education-feature-page.html").read_text(encoding="utf-8")
     if template.count(INSERT_AFTER) != 1:
-        raise ValueError("cannot find where to add the article list in the Education page template")
+        raise ValueError("cannot find where to add the article list in the Education Feature page template")
     page = template.replace(INSERT_AFTER, INSERT_AFTER + links)
     pages = {name: f"{folder.relative_to(REPO).as_posix()}/{name}.html" for name, folder in articles.items()}
-    (out / "index.html").write_text(localise(page, "index.html", pages), encoding="utf-8")
+    pages[HOME_PAGE] = "index.html"
+    (out / "index.html").write_text(localise(page, pages), encoding="utf-8")
 
-    print(f"Built the Education page and {len(articles)} article pages to {out}")
+    print(f"Built the Education Feature page and {len(articles)} article pages to {out}")
 
 
 def main():
