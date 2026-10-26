@@ -13,6 +13,9 @@ asbmb-education-feature-archive/
 │   └── asbmb-education-page.html  ← the website Education page the article pages are based on
 ├── website/
 │   └── education-page-article-links.html  ← link list to paste into the Education page
+├── site/
+│   └── build.py                   ← builds the GitHub Pages copy of the website pages (see below)
+├── .github/workflows/pages.yml    ← publishes that copy to GitHub Pages
 └── <year>/
     └── vol-<volume>-no-<number>-<month>/
         ├── README.md              ← issue contents
@@ -128,6 +131,20 @@ asbmb-education-feature-archive/
 - [A Picture is Worth 1,000 Words – What is a Video Worth? Student Perceptions of Video and Screen-recorded Feedback](2026/vol-57-no-2-august/video-feedback/README.md) – James Tsatsaronis
 - [Scaling Engagement in Large Biochemistry Classes: A Case-based Redesign Using Digital Collaboration to Maintain Learning Quality](2026/vol-57-no-2-august/scaling-engagement/README.md) – Mehrnaz Keyhanfar, Briony Forbes and Amy Wyatt
 - [Taking ASBMB Education to Europe: Report on the FEBS Education and Training Conference](2026/vol-57-no-2-august/febs-education-conference/README.md) – Nirma Samarawickrema
+
+## GitHub Pages copy
+
+`site/build.py` publishes the website pages described below outside the ASBMB website, with the ASBMB layout unchanged. The home page is the Education page (`templates/asbmb-education-page.html`) with the article list from `website/education-page-article-links.html` added after the Education Feature section, and each article is its `education-feature-<article-slug>.html` page. To make the pages work away from www.asbmb.org.au, the script removes their `<base>` element so images load from each article's `images/` folder, points the site menu at the matching pages on www.asbmb.org.au, and points links to the Education page at the home page. The files in this repository are not changed.
+
+To build it locally (Python 3, no extra packages):
+
+```
+python3 site/build.py          # writes the site to _site/
+```
+
+Then open `_site/index.html` in a browser.
+
+The workflow in `.github/workflows/pages.yml` builds the site and publishes it with GitHub Pages on every push to `main`. To turn it on, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 
 ## Using the website pages
 
