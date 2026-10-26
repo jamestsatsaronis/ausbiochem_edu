@@ -135,7 +135,7 @@ asbmb-education-feature-archive/
 
 ## GitHub Pages copy
 
-`site/build.py` publishes the website pages described below outside the ASBMB website, with the ASBMB layout unchanged. The home page is the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`) with the article list from `website/education-page-article-links.html` added after its Contributing section, and each article is its `education-feature-<article-slug>.html` page. To make the pages work away from www.asbmb.org.au, the script removes their `<base>` element so images load from each article's `images/` folder and points the site menu at the matching pages on www.asbmb.org.au. The menu's Australian Biochemist Education Feature link, and each article's link back to Education, go to the home page. The files in this repository are not changed.
+`site/build.py` publishes the website pages described below outside the ASBMB website, with the ASBMB layout unchanged. The home page is the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`) with the article list from `website/education-page-article-links.html` added after its Contributing section, and each article is its `education-feature-<article-slug>.html` page. To make the pages work away from www.asbmb.org.au, the script removes their `<base>` element so images load from each article's `images/` folder and points the site menu at the matching pages on www.asbmb.org.au. The menu's Australian Biochemist Education Feature link, and each article's "< Back to Education" link, go to the home page. The files in this repository are not changed.
 
 To build it locally (Python 3, no extra packages):
 
@@ -149,7 +149,7 @@ The workflow in `.github/workflows/pages.yml` builds the site and publishes it w
 
 ## Using the website pages
 
-The `education-feature-*.html` files use the same header, navigation, footer and styles as the current Education page (`templates/asbmb-education-page.html`). The article title is the page heading, body text and tables use the site's 15px body style, and each page ends with a note on where the article first appeared and a link back to Education.
+The `education-feature-*.html` files use the same header, footer and styles as the Education page (`templates/asbmb-education-page.html`), and the site menu from the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`), where Education is a drop-down that includes the Education Feature page. The article title is the page heading, body text and tables use the site's 15px body style, and each page ends with a note on where the article first appeared and a link back to Education.
 
 - **Images.** Pages refer to images as `images/<file>`. The template sets `<base href="https://www.asbmb.org.au/">`, so on the live site these paths resolve against the site root. Before publishing, upload each article's images (for example to the EventsAir file store) and replace the `src` paths with the uploaded URLs. Opened locally, the pages show their text but not their images or site styling.
 - **Page addresses.** Canonical and social-media URLs assume each page is published at `https://www.asbmb.org.au/education-feature-<article-slug>`. Change them if the site uses different page names.

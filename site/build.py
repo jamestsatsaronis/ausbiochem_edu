@@ -15,7 +15,7 @@ copies them into a static site that works anywhere, keeping the ASBMB layout:
 - links to other pages of the ASBMB website are made absolute, so the menu
   still goes to www.asbmb.org.au;
 - the menu's Australian Biochemist Education Feature link, and each article's
-  link back to Education, go to the home page.
+  "< Back to Education" link, go to the home page.
 
 Usage:
     python3 site/build.py              # writes to _site/
@@ -35,6 +35,8 @@ BASE = re.compile(r'\s*<base href="https://www\.asbmb\.org\.au/"\s*/?>')
 LINK = re.compile(r'(<a\b[^>]*?\bhref=")([^"]*)(")')
 ISSUE_DIR = re.compile(r"^vol-\d+-no-\d+-[a-z]+$")
 HOME_PAGE = "australian-biochemist-education-feature"
+# Each article ends with this link; here it returns to the article list on the home page.
+BACK_LINK = re.compile(r'(<a href=")education("[^>]*>&lt; Back to Education</a>)')
 # The article list goes after the Contributing section of the home page.
 INSERT_AFTER = "on how to contribute.</span></div></div><div><br></div></div>"
 
@@ -84,7 +86,10 @@ def build(out):
         dest.mkdir(parents=True)
         home = "../" * len(rel.parts) + "index.html"
         html = (folder / f"{name}.html").read_text(encoding="utf-8")
-        page = localise(html, {"education": home, HOME_PAGE: home})
+        html, found = BACK_LINK.subn(rf"\g<1>{HOME_PAGE}\g<2>", html)
+        if found != 1:
+            raise ValueError(f"{name}: expected one link back to Education, found {found}")
+        page = localise(html, {HOME_PAGE: home})
         (dest / f"{name}.html").write_text(page, encoding="utf-8")
         if (folder / "images").is_dir():
             shutil.copytree(folder / "images", dest / "images")
