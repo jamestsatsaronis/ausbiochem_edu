@@ -168,6 +168,7 @@ The text was extracted from the high- and low-resolution PDFs of each issue and 
   - *Using Digital Technologies to Create an Engaging Small Group Learning Experience* (Aug 2022): “efforts efforts” → “efforts”
   - *Building Career-ready Scientists* (Dec 2024): “comprared” → “compared” (Fig. 1 caption)
   - *Using an Assessment Literacy Module* (Apr 2024): “0 .086” → “0.086” (Table 1)
+  - *Educator and Student Reflections on Supervising and Conducting Biochemistry Education-based Research* (Aug 2024): “coming form” → “coming from”
   - *On the Fly* (Apr 2022): the asterisk used as a footnote marker in the Fig. 1 caption is shown as †
 - **Updates after publication:**
   - *Preparing the Next Generation of Students for AI-Driven Biomedical Research* (Aug 2025): Fig. 1 is placed under the paragraph that cites it, and a footnote added at the first mention of ProteinDJ says the ProteinDJ work has since been published (*Protein Science* 2026, 35(2):e70464) and is available online.
