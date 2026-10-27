@@ -38,12 +38,12 @@ While this example is of a particular discipline-based exam, the design process 
 
 <img src="images/author-eduardo-oliveira.jpg" alt="Author photo" width="110" align="left" hspace="12">
 
-Dr Eduardo Oliveira is a Teaching Fellow in the School of Computing and Information Systems, University of Melbourne. <eduardo.oliveira@unimelb.edu.au>
+Dr Eduardo Oliveira is a Senior Lecturer in the School of Computing and Information Systems, University of Melbourne. <eduardo.oliveira@unimelb.edu.au>
 <br clear="left">
 
 <img src="images/author-sarah-frankland.jpg" alt="Author photo" width="110" align="left" hspace="12">
 
-Dr Sarah Frankland is a Senior Lecturer and Teaching Specialist in the School of Agriculture, Food and Ecosystem Sciences, University of Melbourne. <sarah.frankland@unimelb.edu.au>
+Dr Sarah Frankland is an Associate Professor in the School of Agriculture, Food and Ecosystem Sciences, University of Melbourne. <sarah.frankland@unimelb.edu.au>
 <br clear="left">
 
 ---

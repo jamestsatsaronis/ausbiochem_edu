@@ -173,6 +173,7 @@ The text was extracted from the high- and low-resolution PDFs of each issue and 
 - **Updates after publication:**
   - *Preparing the Next Generation of Students for AI-Driven Biomedical Research* (Aug 2025): Fig. 1 is placed under the paragraph that cites it, and a footnote added at the first mention of ProteinDJ says the ProteinDJ work has since been published (*Protein Science* 2026, 35(2):e70464) and is available online.
   - *Educator and Student Reflections on Supervising and Conducting Biochemistry Education-based Research* (Aug 2024): author corrections from Jordan Witchard to his answers: “Biochemistry and Genetics” → “biochemistry and genetics”; “First year” → “first-year”; “literature as I found myself” → “literature. I found myself”; “understand, i.e. effect” → “understand such as effect”; “learned, I have turned” → “learned. I have turned”.
+  - *Open-book and Open-AI Mindset* (Aug 2023): author biographies updated to current positions. Eduardo Oliveira, Teaching Fellow → Senior Lecturer; Sarah Frankland, Senior Lecturer and Teaching Specialist → Associate Professor.
 
 All other spelling and wording, including inconsistencies in the original, has been left as printed.
 
