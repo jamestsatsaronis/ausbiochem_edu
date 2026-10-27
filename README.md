@@ -169,6 +169,8 @@ The text was extracted from the high- and low-resolution PDFs of each issue and 
   - *Building Career-ready Scientists* (Dec 2024): “comprared” → “compared” (Fig. 1 caption)
   - *Using an Assessment Literacy Module* (Apr 2024): “0 .086” → “0.086” (Table 1)
   - *On the Fly* (Apr 2022): the asterisk used as a footnote marker in the Fig. 1 caption is shown as †
+- **Updates after publication:**
+  - *Preparing the Next Generation of Students for AI-Driven Biomedical Research* (Aug 2025): Fig. 1 is placed under the paragraph that cites it, and a footnote added at the first mention of ProteinDJ says the ProteinDJ work has since been published (*Protein Science* 2026, 35(2):e70464) and is available online.
 
 All other spelling and wording, including inconsistencies in the original, has been left as printed.
 

@@ -11,19 +11,21 @@ The rapid advancement of artificial intelligence (AI) in biomedical research has
 
 Protein binders can be engineered to recognise and specifically bind to a defined target protein to support its visualisation or enact post-translational modifications, relocalisation or degradation.
 
-ProteinDJ, a new tool for *de novo* protein binder design, was developed using funding from the NHMRC. It was part of a novel research project that brought together a supervisor with extensive structural biology knowledge and a student with strong computational skills and AI expertise.
+ProteinDJ¹, a new tool for *de novo* protein binder design, was developed using funding from the NHMRC. It was part of a novel research project that brought together a supervisor with extensive structural biology knowledge and a student with strong computational skills and AI expertise.
 
 ProteinDJ integrates deep learning AI tools AlphaFold2 (1) and ProteinMPNN (2) with the *de novo* protein design tool RFDiffusion (3), to generate novel functional protein binders. Using AI and coding, the student developed this user-friendly package that can leverage high-performance computing systems, dramatically speeding up binder generation (**Fig. 1**). ProteinDJ implements new metrics to evaluate binder quality, including their biochemical attributes such as hydrophobicity, size and charge, with visual plotting of results to help with design filtering and selection. The designs can then be validated by wet lab researchers, using *in vitro* binding assays and assessing functional impact.
-
-The success of the ProteinDJ project highlights the importance of collaboration between experimental and computational scientists to integrate traditional wet lab techniques with cutting-edge AI technologies. To address the rapidly evolving landscape of biomedical research and the growing role of AI, the Scientific Education team at WEHI have developed a new Master of Biomedical Science elective subject, Coding and Data Analysis in Biomedicine, at the University of Melbourne.
-
-## Preparing biomedical graduates for AI-integrated biomedical research
-
-The Coding and Data Analysis in Biomedicine graduate subject combines theoretical lectures and tutorials presented by leading experts in biomedical research with hands-on coding workshops. The subject aims to equip students with the core skills needed to succeed in an AI-embedded research environment.
 
 ![Fig. 1. Overview of the ProteinDJ de novo protein binder design pipeline. The target protein structure is supplied to RFDiffusion, which generates thousands of potential binder structures through iterative refinement. The output structures are suppli](images/figure-1.jpg)
 
 ***Fig. 1.** Overview of the ProteinDJ de novo protein binder design pipeline. The target protein structure is supplied to RFDiffusion, which generates thousands of potential binder structures through iterative refinement. The output structures are supplied to ProteinMPNN, which generates a feasible sequence for each putative binder. Finally, AlphaFold2 is used to validate each binder–target structure. The putative protein must then be validated experimentally to check for specificity of binding to its target and functional impact. Created in biorender.com*
+
+The success of the ProteinDJ project highlights the importance of collaboration between experimental and computational scientists to integrate traditional wet lab techniques with cutting-edge AI technologies. To address the rapidly evolving landscape of biomedical research and the growing role of AI, the Scientific Education team at WEHI have developed a new Master of Biomedical Science elective subject, Coding and Data Analysis in Biomedicine, at the University of Melbourne.
+
+<sub>¹ ProteinDJ work has now been published ([Silke D, Iskander J, Pan J, *et al. Protein Science* 2026. 35(2):e70464](https://doi.org/10.1002/pro.70464)) and is available online at <https://github.com/PapenfussLab/proteindj>.</sub>
+
+## Preparing biomedical graduates for AI-integrated biomedical research
+
+The Coding and Data Analysis in Biomedicine graduate subject combines theoretical lectures and tutorials presented by leading experts in biomedical research with hands-on coding workshops. The subject aims to equip students with the core skills needed to succeed in an AI-embedded research environment.
 
 The lecture series exposes students to a broad range of computational approaches used in biomedical research. For example, one lecture introduces students to core principles of machine learning and how these tools are evaluated and applied in biomedical datasets (4). In another, Professor Jodie McVernon explores the use of modelling techniques in interdisciplinary settings, such as COVID-19, demonstrating how computational tools can inform public health decision-making (5).
 
