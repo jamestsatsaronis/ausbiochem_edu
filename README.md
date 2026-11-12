@@ -153,7 +153,7 @@ The `education-feature-*.html` files use the same header, footer and styles as t
 
 - **Images.** Pages refer to images as `images/<file>`. The template sets `<base href="https://www.asbmb.org.au/">`, so on the live site these paths resolve against the site root. Before publishing, upload each article's images (for example to the EventsAir file store) and replace the `src` paths with the uploaded URLs. Opened locally, the pages show their text but not their images or site styling.
 - **Page addresses.** Canonical and social-media URLs assume each page is published at `https://www.asbmb.org.au/education-feature-<article-slug>`. Change them if the site uses different page names.
-- **Links from the Education Feature page.** `website/education-page-article-links.html` lists every article page, grouped by issue, with each issue's coordinator line under its heading, under an Education Feature Articles heading styled like the Contributing heading on the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`). Paste it after that page's Contributing section.
+- **Links from the Education Feature page.** `website/education-page-article-links.html` lists every article page, grouped by issue, with bullets under each issue heading naming that issue's coordinators and any guest co-editors, under an Education Feature Articles heading styled like the Contributing heading on the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`). Paste it after that page's Contributing section.
 
 ## How the articles were prepared
 
