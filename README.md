@@ -153,7 +153,7 @@ The `education-feature-*.html` files use the same header, footer and styles as t
 
 - **Images.** Pages refer to images as `images/<file>`. The template sets `<base href="https://www.asbmb.org.au/">`, so on the live site these paths resolve against the site root. Before publishing, upload each article's images (for example to the EventsAir file store) and replace the `src` paths with the uploaded URLs. Opened locally, the pages show their text but not their images or site styling.
 - **Page addresses.** Canonical and social-media URLs assume each page is published at `https://www.asbmb.org.au/education-feature-<article-slug>`. Change them if the site uses different page names.
-- **Links from the Education Feature page.** `website/education-page-article-links.html` lists every article page, grouped by issue, under an Education Feature Articles heading styled like the Contributing heading on the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`). Paste it after that page's Contributing section.
+- **Links from the Education Feature page.** `website/education-page-article-links.html` lists every article page, grouped by issue, with each issue's coordinator line under its heading, under an Education Feature Articles heading styled like the Contributing heading on the Australian Biochemist Education Feature page (`templates/asbmb-education-feature-page.html`). Paste it after that page's Contributing section.
 
 ## How the articles were prepared
 
@@ -161,7 +161,7 @@ The text was extracted from the high- and low-resolution PDFs of each issue and 
 
 - **Layout repairs.** Paragraphs split across columns, pages or figures were rejoined, and hyphens from line breaks were removed. Captions, author biographies and reference lists were reassembled, and hyperlinks embedded in the PDFs were kept.
 - **Figures drawn as vector graphics** were rendered from the PDF as images. This applies to flow diagrams, reaction schemes, charts, figure panels made of several pieces, and groups of portrait photos.
-- **Not included:** advertisements and notices that shared pages with the Education Feature, the coordinator line at the start of each feature (listed on each issue page instead), and the obituary for John Wallace that appeared on the same page as the April 2025 feature.
+- **Not included:** advertisements and notices that shared pages with the Education Feature, the coordinator line at the start of each feature (listed on each issue page and in the article list in `website/education-page-article-links.html` instead), and the obituary for John Wallace that appeared on the same page as the April 2025 feature.
 - **Tables** were rebuilt as text tables. In *Getting to the CoRe of Flow Cytometry* (August 2025), Table 3's colour key could not be kept, so each row is labelled with its knowledge type instead.
 - **Typographical corrections**, where the printed text had an obvious slip:
   - *A Picture is Worth 1,000 Words* (Aug 2026): “Students three main themes” → “Students identified three main themes”
