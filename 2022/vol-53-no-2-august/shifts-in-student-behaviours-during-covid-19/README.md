@@ -25,7 +25,7 @@ The COVID-19 pandemic has resulted in changes to teaching that requires us to co
 
 <img src="images/author-ann-rogerson.jpg" alt="Author photo" width="110" align="left" hspace="12">
 
-Professor Ann Rogerson is the Associate Dean (Education) for the Faculty of Business and Law at the University of Wollongong. <annr@uow.edu.au>
+Professor Ann M. Rogerson is Professor in the School of Business at the University of Wollongong and Academic Lead of UOW’s institution-wide Assessment Reimagined initiative. She also chairs the UOW Course Quality Committee and Academic Integrity Advisory Group. A former Deputy Dean (Education), her academic leadership spans assessment innovation, curriculum transformation, quality assurance, academic integrity and responsible use of generative AI in higher education. Her research focuses on academic integrity, assessment design, and educational technologies. Ann holds a Doctor of Business Administration, Master of Education in Higher Education, Master of Management and is a Senior Fellow of Advance HE. <annr@uow.edu.au>
 <br clear="left">
 
 ---
